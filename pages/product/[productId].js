@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 
-const ProductDetails = () => {
-  const router = useRouter();
-  const productId = router.query.productId;
-  return <div>ProductDetails {productId}</div>;
+const ProductItem = () => {
+  const count = useRouter();
+  const productId = count.query.productId;
+  return <div>This is product items {productId}</div>;
 };
 
-export default ProductDetails;
+export default ProductItem;

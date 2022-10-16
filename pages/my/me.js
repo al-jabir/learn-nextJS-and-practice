@@ -1,7 +1,7 @@
 import React from 'react';
 
 const me = () => {
-  return <div>When I will be developer as frontend</div>;
+  return <div>Where do you live in?</div>;
 };
 
 export default me;
