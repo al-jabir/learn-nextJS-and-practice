@@ -21,6 +21,7 @@ export default UserListApi;
 export async function getStaticProps() {
   const res = await fetch('https://jsonplaceholder.typicode.com/users');
   const data = await res.json();
+  const err = console.log(`data is not found ${err}`);
 
   return {
     props: {
