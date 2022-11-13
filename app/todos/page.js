@@ -1,11 +1,28 @@
 import React from 'react';
-import TodoList from './TodoList';
 
-const Todos = () => {
+const fetchData = async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos', {
+    next: { revalidate: 60 },
+  });
+  const todos = await res.json();
+  return todos;
+};
+
+const Todos = async () => {
+  const todos = await fetchData();
+
   return (
-    <div>
-      <TodoList />
-    </div>
+    <>
+      {todos.map(({ id, title }) => {
+        return (
+          <div key={id}>
+            <p>
+              <span className='font-bold'>title : </span> {title}
+            </p>
+          </div>
+        );
+      })}
+    </>
   );
 };
 
